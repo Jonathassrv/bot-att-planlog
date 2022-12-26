@@ -23,6 +23,7 @@ class Bot(DesktopBot):
             escolha == 2
             print("Escolha o que deseja atualizar:")
             print("(1) NFs em Transito, (2) COLIGADAS, (3) ESTOQUE VESPASIANO, (4) ESTOQUE GERAL, (5) ESTOQUE DIMB, (6) VENDA COMODATO, (7) ATUALIZAR PLANLOG")
+            print("*Lembre-se de deixar o SAP aberto e na tela após selecionar a opção.")
             selecao = int(input("Digite o número referente a atualização: "))
             
             if selecao == 1:
@@ -80,7 +81,7 @@ class Bot(DesktopBot):
                 self.not_found("transferencia")
             self.click()
             self.key_f8()
-            if not self.find( "simbolotres", matching=0.97, waiting_time=10000):
+            if not self.find( "simbolotres", matching=0.97, waiting_time=30000):
                 self.not_found("simbolotres")               
             self.right_click_at(x=100, y=550)
             if not self.find( "planilha", matching=0.97, waiting_time=10000):
@@ -115,7 +116,7 @@ class Bot(DesktopBot):
                 self.not_found("coligadastipo")
             self.click()
             self.key_f8()
-            if not self.find( "simbolotres", matching=0.97, waiting_time=10000):
+            if not self.find( "simbolotres", matching=0.97, waiting_time=30000):
                 self.not_found("simbolotres")
             
             self.right_click_at(x=100, y=550)
