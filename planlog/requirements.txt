@@ -1,0 +1,6 @@
+botcity-framework-core>=0.4.0,<1.0
+botcity-maestro-sdk>=0.2.0,<1.0
+# Uncomment to use botcity-utils
+#botcity-utils>=0.1.2
+# Uncomment to use botcity-crawler-plugin
+#botcity-crawler-plugin

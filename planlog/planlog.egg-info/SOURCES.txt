@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+VERSION
+requirements.txt
+setup.py
+planlog/__init__.py
+planlog/__main__.py
+planlog/bot.py
+planlog.egg-info/PKG-INFO
+planlog.egg-info/SOURCES.txt
+planlog.egg-info/dependency_links.txt
+planlog.egg-info/requires.txt
+planlog.egg-info/top_level.txt
+planlog/resources/start.png
