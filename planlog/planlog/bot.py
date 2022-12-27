@@ -9,6 +9,7 @@ from datetime import date
 class Bot(DesktopBot):
 
     def action(self, execution=None):
+        sucesso = "Atualização concluída!"
         
     #INSTRUÇÕES INICIAIS
         today = date.today()
@@ -21,7 +22,7 @@ class Bot(DesktopBot):
             i = 0
         else:
             escolha == 2
-            print("Escolha o que deseja atualizar:")
+            print("Escolha o que deseja atualizar: ")
             print("(1) NFs em Transito, (2) COLIGADAS, (3) ESTOQUE VESPASIANO, (4) ESTOQUE GERAL, (5) ESTOQUE DIMB, (6) VENDA COMODATO, (7) ATUALIZAR PLANLOG")
             print("*Lembre-se de deixar o SAP aberto e na tela após selecionar a opção.")
             selecao = int(input("Digite o número referente a atualização: "))
@@ -148,6 +149,7 @@ class Bot(DesktopBot):
             print("**ATUALIZANDO ESTOQUE VESPASIANO**")
             print("**********************************")
 
+            self.wait(3000)
             self.paste('iq09')
             self.enter()
             if not self.find( "variante", matching=0.97, waiting_time=10000):
