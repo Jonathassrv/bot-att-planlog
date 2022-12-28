@@ -23,7 +23,7 @@ class Bot(DesktopBot):
         else:
             escolha == 2
             print("Escolha o que deseja atualizar: ")
-            print("(1) NFs em Transito, (2) COLIGADAS, (3) ESTOQUE VESPASIANO, (4) ESTOQUE GERAL, (5) ESTOQUE DIMB, (6) VENDA COMODATO, (7) ATUALIZAR PLANLOG")
+            print("(1) NFs TRANSFERÊNCIA, (2) NFs COLIGADAS, (3) ESTOQUE VESPASIANO, (4) ESTOQUE GERAL, (5) ESTOQUE DIMB, (6) VENDA COMODATO, (7) ATUALIZAR PLANLOG")
             print("*Lembre-se de deixar o SAP aberto e na tela após selecionar a opção.")
             selecao = int(input("Digite o número referente a atualização: "))
             
@@ -358,8 +358,8 @@ class Bot(DesktopBot):
             print("*******************")
 
             self.execute('U:\GESTAO ABASTECIMENTO\GATE\PCP\PCP 2022\PLANEJAMENTO COMODATO\Planlog Comodato Dezembro.xlsm')
-            if not self.find( "reconhecimentoexcel", matching=0.97, waiting_time=10000):
-                self.not_found("reconhecimentoexcel")                              
+            if not self.find( "reconhecimento_excel", matching=0.97, waiting_time=30000):
+                self.not_found("reconhecimento_excel")                                         
             if not self.find( "att_planlog", matching=0.97, waiting_time=10000):
                 self.not_found("att_planlog")            
             self.click()                        
@@ -401,6 +401,7 @@ class Bot(DesktopBot):
             
 if __name__ == '__main__':
     Bot.main()
+
 
 
 
