@@ -113,7 +113,7 @@ class Bot(DesktopBot):
             print("**ATUALIZANDO COLIGADAS**")
             print("*************************")
 
-            if not self.find( "coligadastipo", matching=0.97, waiting_time=10000):
+            if not self.find( "coligadastipo", matching=0.97, waiting_time=20000):
                 self.not_found("coligadastipo")
             self.click()
             self.key_f8()
@@ -390,7 +390,6 @@ class Bot(DesktopBot):
             self.paste(d1)
             self.enter()
             self.wait(4000)
-            self.alt_f4()
             print("Planlog atualizada com sucesso!")
             i += 1
     
