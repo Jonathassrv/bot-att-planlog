@@ -357,7 +357,7 @@ class Bot(DesktopBot):
             print("**ABRINDO PLANLOG**")
             print("*******************")
 
-            self.execute('U:\GESTAO ABASTECIMENTO\GATE\PCP\PCP 2022\PLANEJAMENTO COMODATO\Planlog Comodato Dezembro.xlsm')
+            self.execute('U:\GESTAO ABASTECIMENTO\GATE\PCP\PCP 2023\PLANEJAMENTO COMODATO\Planlog Comodato Janeiro.xlsm')
             if not self.find( "reconhecimento_excel", matching=0.97, waiting_time=30000):
                 self.not_found("reconhecimento_excel")                                         
             if not self.find( "att_planlog", matching=0.97, waiting_time=10000):
@@ -374,14 +374,15 @@ class Bot(DesktopBot):
             if not self.find( "salvarcomo", matching=0.97, waiting_time=10000):
                 self.not_found("salvarcomo")
             self.click()
+            self.wait(500)
             if not self.find( "procurar", matching=0.97, waiting_time=10000):
                 self.not_found("procurar")
             self.click()
             if not self.find( "pastaplanlogdia", matching=0.97, waiting_time=10000):
                 self.not_found("pastaplanlogdia")
             self.click()
-            if not self.find( "pastadez", matching=0.97, waiting_time=10000):
-                self.not_found("pastadez")
+            if not self.find( "pastajan", matching=0.97, waiting_time=10000):
+                self.not_found("pastajan")            
             self.doubleclick()        
             self.tab()
             self.tab()
