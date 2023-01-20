@@ -55,7 +55,8 @@ class Bot(DesktopBot):
             if not self.find( "reconhecerlogin", matching=0.97, waiting_time=10000):
                 self.not_found("reconhecerlogin")      
             print("Insira os seus dados de login")
-            self.wait(10000)        
+            if not self.find( "saplogin", matching=0.97, waiting_time=60000):
+                self.not_found("saplogin")       
             sucesso = "Concluído!"
             print(sucesso)
 
@@ -113,6 +114,23 @@ class Bot(DesktopBot):
             print("**ATUALIZANDO COLIGADAS**")
             print("*************************")
 
+            if not self.find( "saplogin", matching=0.97, waiting_time=60000):
+                self.not_found("saplogin")
+            self.paste('ztranicmsnfe')
+            self.enter()
+            if not self.find( "variante", matching=0.97, waiting_time=10000):
+                self.not_found("variante")
+            self.click()        
+            if not self.find( "criadopor", matching=0.97, waiting_time=10000):
+                self.not_found("criadopor")
+            self.click()        
+            self.tab()
+            self.control_a()
+            self.paste('victor.p')
+            self.key_f8()
+            if not self.find( "transitocom", matching=0.97, waiting_time=10000):
+                self.not_found("transitocom")             
+            self.doubleclick()
             if not self.find( "coligadastipo", matching=0.97, waiting_time=20000):
                 self.not_found("coligadastipo")
             self.click()
@@ -149,7 +167,8 @@ class Bot(DesktopBot):
             print("**ATUALIZANDO ESTOQUE VESPASIANO**")
             print("**********************************")
 
-            self.wait(3000)
+            if not self.find( "saplogin", matching=0.97, waiting_time=60000):
+                self.not_found("saplogin")
             self.paste('iq09')
             self.enter()
             if not self.find( "variante", matching=0.97, waiting_time=10000):
@@ -207,6 +226,10 @@ class Bot(DesktopBot):
             print("**ATUALIZANDO ESTOQUE GERAL**")
             print("*****************************")
 
+            if not self.find( "saplogin", matching=0.97, waiting_time=60000):
+                self.not_found("saplogin")
+            self.paste('iq09')
+            self.enter()
             if not self.find( "variante", matching=0.97, waiting_time=10000):
                 self.not_found("variante")
             self.click()
@@ -340,17 +363,6 @@ class Bot(DesktopBot):
             print(sucesso)
             i += 1
 
-    #FECHAMENTO SAP
-            print("****************")
-            print("**FECHANDO SAP**")
-            print("****************")
-
-            self.wait(2000)
-            self.alt_f4()
-            if not self.find( "sairsap", matching=0.97, waiting_time=10000):
-                self.not_found("sairsap")
-            self.click()
-
     #ATUALIZAR PLANLOG
         if i < 8:
             print("*******************")
@@ -401,6 +413,7 @@ class Bot(DesktopBot):
             
 if __name__ == '__main__':
     Bot.main()
+
 
 
 
